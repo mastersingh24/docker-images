@@ -1,0 +1,4 @@
+image: fabric-ca-client
+org: ibmblockchain
+network: true
+hash: 1.1.0

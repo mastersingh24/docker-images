@@ -1,4 +1,4 @@
-FROM golang:1.10-alpine as builder
+FROM golang:1.9.2-alpine3.7 as builder
 
 ENV FABRIC_VER v1.1.0
 RUN apk add --no-cache \
@@ -13,7 +13,7 @@ RUN ./build.sh
 
 FROM alpine:3.7
 
-RUN apk add --no-cache libtool
+RUN apk add --no-cache libltdl
 ENV FABRIC_CFG_PATH /etc/hyperledger/fabric
 VOLUME /etc/hyperledger/fabric
 VOLUME /var/hyperledger
